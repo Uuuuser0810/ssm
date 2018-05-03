@@ -1,15 +1,56 @@
 package com.jiyx.entity;
 
+import java.io.Serializable;
 import java.util.Date;
 
-public class User {
-    private Integer id;
+public class User implements Serializable{
+    private static final long serialVersionUID = 1L;
+    /**
+     * 用户ID
+     */
+    private long id;
+    /**
+     * 用户名
+     */
     private String username;
+    /**
+     * 密码
+     */
     private String password;
+    /**
+     * 邮箱
+     */
     private String email;
+    /**
+     * 电话
+     */
     private int mobile;
+    /**
+     * 用户状态
+     */
     private int locked;
+    /**
+     * 创建时间
+     */
     private Date create_time;
+
+    public User(long id, String username, String password, String email, int mobile, int locked, Date create_time) {
+        this.id = id;
+        this.username = username;
+        this.password = password;
+        this.email = email;
+        this.mobile = mobile;
+        this.locked = locked;
+        this.create_time = create_time;
+    }
+
+    public long getId() {
+        return id;
+    }
+
+    public void setId(long id) {
+        this.id = id;
+    }
 
     public String getUsername() {
         return username;
@@ -19,15 +60,12 @@ public class User {
         this.username = username;
     }
 
-    public Integer getId() {
-        return id;
+    public String getPassword() {
+        return password;
     }
 
-    public void setId(Integer id) {
-        this.id = id;
-    }
-
-    public User() {
+    public void setPassword(String password) {
+        this.password = password;
     }
 
     public String getEmail() {
@@ -62,22 +100,16 @@ public class User {
         this.create_time = create_time;
     }
 
-    public String getPassword() {
-
-        return password;
-    }
-
-    public void setPassword(String password) {
-        this.password = password;
-    }
-
-    public User(Integer id, String username, String password, String email, int mobile, int locked, Date create_time) {
-        this.id = id;
-        this.username = username;
-        this.password = password;
-        this.email = email;
-        this.mobile = mobile;
-        this.locked = locked;
-        this.create_time = create_time;
+    @Override
+    public String toString() {
+        return "User{" +
+                "id=" + id +
+                ", username='" + username + '\'' +
+                ", password='" + password + '\'' +
+                ", email='" + email + '\'' +
+                ", mobile=" + mobile +
+                ", locked=" + locked +
+                ", create_time=" + create_time +
+                '}';
     }
 }

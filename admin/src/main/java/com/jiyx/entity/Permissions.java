@@ -1,25 +1,19 @@
 package com.jiyx.entity;
 
-import java.io.Serializable;
-
-public class Role implements Serializable{
-    private static final long serialVersionUID = 1L;
-    /**
-     * 角色ID
-     */
+public class Permissions {
     private long id;
     /**
-     * 角色名称
+     * 权限
      */
-    private String role;
+    private String permissions;
     /**
-     * 角色描述
+     * 描述
      */
     private String description;
 
-    public Role(long id, String role, String description) {
+    public Permissions(long id, String permissions, String description) {
         this.id = id;
-        this.role = role;
+        this.permissions = permissions;
         this.description = description;
     }
 
@@ -31,12 +25,12 @@ public class Role implements Serializable{
         this.id = id;
     }
 
-    public String getRole() {
-        return role;
+    public String getPermissions() {
+        return permissions;
     }
 
-    public void setRole(String role) {
-        this.role = role;
+    public void setPermissions(String permissions) {
+        this.permissions = permissions;
     }
 
     public String getDescription() {
@@ -49,9 +43,9 @@ public class Role implements Serializable{
 
     @Override
     public String toString() {
-        return "Role{" +
+        return "Permissions{" +
                 "id=" + id +
-                ", role='" + role + '\'' +
+                ", permissions='" + permissions + '\'' +
                 ", description='" + description + '\'' +
                 '}';
     }
